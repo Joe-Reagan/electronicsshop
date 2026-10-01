@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1E2A2A">
+    <title>Store Admin | Joe Electronics</title>
+    <link rel="stylesheet" href="sales.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="catalog-page admin-page">
+    <header class="catalog-header">
+        <nav class="catalog-nav" aria-label="Main navigation">
+            <a class="catalog-brand" href="index.html">Joe <span>Electronics</span></a>
+            <div class="catalog-nav-links"><a href="index.html">Store</a><a href="cart.html">My bookings</a></div>
+            <button class="catalog-cart" id="admin-sign-out" type="button">Sign out</button>
+        </nav>
+    </header>
+    <main class="admin-main">
+        <header class="admin-intro">
+            <span class="section-kicker">Store operations</span>
+            <h1>Admin dashboard</h1>
+            <p>Manage products and respond to customer booking requests. Bookings are requests for follow-up; no payment is taken here.</p>
+        </header>
+        <p class="store-message" id="admin-message" hidden></p>
+        <section class="admin-panel">
+            <div class="admin-section-title"><div><span class="section-kicker">Inventory</span><h2>Add a product</h2></div></div>
+            <form id="product-form" class="admin-product-form">
+                <label>Product name<input name="name" required maxlength="120"></label>
+                <label>Category<input name="category" required maxlength="80" placeholder="For example, Audio"></label>
+                <label>Price (KSh)<input name="price" type="number" required min="0" step="1"></label>
+                <label>Image path or URL<input name="image_url" maxlength="500" placeholder="headphones.jpg"></label>
+                <label class="admin-wide">Description<textarea name="description" rows="2" maxlength="500" required></textarea></label>
+                <label class="check-label"><input name="is_flash_sale" type="checkbox"> Include in Flash Sales</label>
+                <label class="check-label"><input name="is_new_arrival" type="checkbox"> Include in New Arrivals</label>
+                <button class="admin-primary" type="submit">Add product</button>
+            </form>
+            <div class="admin-section-title"><h2>Products</h2><span id="product-count"></span></div>
+            <div class="admin-product-list" id="admin-products" aria-live="polite"></div>
+        </section>
+        <section class="admin-panel">
+            <div class="admin-section-title"><div><span class="section-kicker">Customer follow-up</span><h2>Bookings</h2></div><span id="booking-count"></span></div>
+            <div class="admin-bookings" id="admin-bookings" aria-live="polite"></div>
+        </section>
+        <section class="admin-panel admin-transfer-panel">
+            <div class="admin-section-title"><div><span class="section-kicker">Store ownership</span><h2>Transfer admin access</h2></div></div>
+            <p class="admin-transfer-warning">There is one store administrator. Transfer ownership only to a trusted person who already has a customer account. This signs you out and removes your admin access immediately.</p>
+            <form id="admin-transfer-form" class="admin-product-form">
+                <label>Successor account email<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="registered-account@example.com"></label>
+                <label>Your current password<input name="password" type="password" autocomplete="current-password" required maxlength="128"></label>
+                <label>Type TRANSFER ADMIN to confirm<input name="confirmation" required pattern="TRANSFER ADMIN" autocomplete="off"></label>
+                <button class="admin-transfer-button" type="submit">Transfer ownership and sign out</button>
+            </form>
+        </section>
+    </main>
+    <footer class="catalog-footer"><p>&copy; 2026 Electronics Store. All rights reserved.</p><div class="tog"><h4>Quick Links</h4><nav class="footer-link-row" aria-label="Footer navigation"><a href="index.html">Home</a><a href="cart.html">Cart</a><a href="New.html">New Arrivals</a><a href="flash.html">Flash sales</a></nav></div></footer>
+    <script src="store-api.js"></script>
+    <script src="store-auth.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

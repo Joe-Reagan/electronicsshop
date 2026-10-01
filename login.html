@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Electronics-login</title>
+        <link rel="stylesheet" href="../hamburger-menu.css">
+        <style>
+            .mult{
+    display:flex;
+    flex-direction:row;
+    width:70%;
+    height: 90%;
+    justify-content:center;
+    align-items:center;
+    margin-top: 12%;
+            }
+            body{
+    background-color: #1A0F00;
+    color: #fff;
+            }
+            .form{
+    display:inline;
+    align-items: center;
+}
+.form h1{
+    font-size: 60px;
+}
+input[type="email"]{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #1A0F00;
+    border-radius: 5px;
+}
+input[type="email"]:focus{
+    outline: none;
+    border-color: #007BFF;
+}
+input[type="email"]:hover{
+    border-color: #007BFF;
+}
+input[type="password"]{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #1A0F00;
+    border-radius: 5px;
+}
+input[type="password"]:focus{
+    outline: none;
+    border-color: #007BFF;
+}
+input[type="password"]:hover{
+    border-color: #007BFF;
+}
+button{
+    width:40%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content:center;
+    align-items:center;
+}
+button:hover{
+    background-color: #0056b3;
+}
+.txt p{
+    margin: 0;
+    padding: 0;
+    margin-top:5px;
+}
+.txt{
+    background:#1E2A2A;
+    color:#000 ;
+    height:auto;
+    width:90%;
+    border:none;
+        border-radius:5px;
+    display:inline;
+    justify-content:center;
+    align-items:center;
+    font-size: 60px;
+    margin-left:50%;
+    border:none;
+    border-radius: 40px 20px 40px 20px;
+}
+button a{
+    color: #fff;    
+    text-decoration: none;
+    width:40%;
+    margin:auto;
+}
+
+
+        </style>
+        <link rel="stylesheet" href="auth.css">
+    </head>
+    <body class="auth-page">
+        <header class="auth-site-nav">
+            <a class="auth-site-brand" href="index.html">Joe Electronics</a>
+            <nav class="auth-site-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#laptops">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="Sign.html">Sign up</a>
+            </nav>
+        </header>
+        <div class="mult"> 
+        <div class="txt">
+            <p>Welcome back to Joe <br>Electronic store!</p>
+
+<button><a href="Sign.html">Don't have an account? Sign Up</a></button>
+        </div>
+        
+
+        <div class="form">
+            <h1>Login Page</h1>
+            <p id="auth-message" class="store-message" data-server-status hidden></p>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        </div>
+        <footer class="auth-site-footer">
+            <p>&copy; 2026 Electronics Store. All rights reserved.</p>
+            <nav class="auth-footer-links" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#laptops">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="Sign.html">Sign up</a>
+            </nav>
+        </footer>
+        <script src="store-api.js"></script>
+        <script src="store-auth.js"></script>
+    </body>
+</html>
