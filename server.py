@@ -1,4 +1,4 @@
-"""Local Electronics booking site with a SQLite-backed JSON API."""
+"""Local Electronics booking site with a SQLite-backend JSON API."""
 
 from __future__ import annotations
 
